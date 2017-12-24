@@ -1,0 +1,203 @@
+<KinBody name="smartduino_6DoF">
+  <Body name="base" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Body name="shoulder" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Shoulder_Yaw" type="hinge">
+    <Body>base</Body>
+    <Body>shoulder</Body>
+    <offsetfrom>base</offsetfrom>
+    <axis>0 0 1</axis>
+    <anchor>0 0 0</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+  <Body name="arm" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Shoulder_Pitch" type="hinge">
+    <Body>shoulder</Body>
+    <Body>arm</Body>
+    <offsetfrom>shoulder</offsetfrom>
+    <axis>0 1 0</axis>
+    <anchor>0.03 0 0.03</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+  <Body name="forearm" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Forearm_Pitch" type="hinge">
+    <Body>arm</Body>
+    <Body>forearm</Body>
+    <offsetfrom>arm</offsetfrom>
+    <axis>0 1 0</axis>
+    <anchor>0 0 0.20</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+  <Body name="forearm_roller" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Forearm_Roll" type="hinge">
+    <Body>forearm</Body>
+    <Body>forearm_roller</Body>
+    <offsetfrom>forearm</offsetfrom>
+    <axis>1 0 0</axis>
+    <anchor>0.01 0 0.01</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+  <Body name="wrist" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Wrist_pitch" type="hinge">
+    <Body>forearm_roller</Body>
+    <Body>wrist</Body>
+    <offsetfrom>forearm_roller</offsetfrom>
+    <axis>0 1 0</axis>
+    <anchor>0.15 0 0</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+  <Body name="eef" type="dynamic">
+    <Translation>0 0 0</Translation>
+    <!--
+    <Geom type="trimesh">
+      <Data>models/WAM/wam0.iv 1.0</Data>
+      <Render>models/WAM/wam0.iv  1.0</Render>
+    </Geom>
+    <mass type="custom">
+      <total>9.97059584</total>
+      <com>0.19982328999999999 0.14 0.079952939999999972</com>
+      <inertia>0.10916849 0.00640270  0.02557874 0.00640270 0.18294303 0.00161433 0.02557874 0.00161433 0.11760385</inertia>
+    </mass>
+    -->
+  </Body>
+
+  <Joint name="Wrist_roll" type="hinge">
+    <Body>wrist</Body>
+    <Body>eef</Body>
+    <offsetfrom>wrist</offsetfrom>
+    <axis>1 0 0</axis>
+    <anchor>0.02 0 0</anchor>
+    <limitsdeg>-90 90</limitsdeg>
+    <!--
+    <maxvel>1.5708</maxvel>
+    <weight>1.92154</weight>
+    <resolution>0.25</resolution>
+    <rotorinertia>0.0 0.201 0.0</rotorinertia>
+    <maxtorque>77.3</maxtorque>
+    -->
+  </Joint>
+
+</KinBody>
